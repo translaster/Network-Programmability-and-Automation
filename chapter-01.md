@@ -1,70 +1,60 @@
-## CHAPTER 1
-## Network Industry Trends
-More than a decade has passed since the term software-defined networking (SDN) was coined, representing one of the biggest revolutions in the networking industry since the 1990s, and likely the term is still confusing you. Whether you are new to SDN or have been hung up in its craze for the past several years, don’t worry. This book will walk you through foundational topics to start your journey of understanding how software, the cloud, and open source have completely transformed the way we architect and manage networking in the modern era.
+# Глава 1. Тенденции развития сетевой индустрии
 
-This chapter provides insight into trends in the network industry focused on SDN, its relevance, and its impact in today’s world of networking. We’ll get started by reviewing how SDN made it into the mainstream and ultimately led to network programmability and automation practices.
+С момента появления термина «программно-определяемая сеть» (software-defined networking - SDN), представляющего собой одну из крупнейших революций в сетевой индустрии с 1990-х годов, прошло уже более десяти лет, но, вероятно, этот термин все еще сбивает вас с толку. Неважно, новичок ли вы в SDN или уже несколько лет увлечены этой идеей, не волнуйтесь. Эта книга проведет вас по основополагающим темам, чтобы вы начали свой путь к пониманию того, как программное обеспечение, облако и открытый исходный код полностью изменили способ проектирования и управления сетями в современную эпоху.
 
-### The Rise of Software-Defined Networking
+В этой главе вы узнаете о тенденциях в сетевой индустрии, сосредоточенных на SDN, его актуальности и влиянии на современный мир сетей. Для начала мы рассмотрим, как SDN вошла в обиход и в конечном итоге привела к программируемости и автоматизации сети.
 
-If one person could be credited with all the change occurring in the network
-industry, it would be Martin Casado, a general partner in the venture capitalist
-company Andreessen Horowitz. Previously, Casado was a VMware fellow, senior vice
-president, and general manager in the Networking and Security Business Unit at
-VMware. He has had a profound impact on the industry, not just from his direct
-contributions (including OpenFlow and Nicira), but by opening the eyes of large
-network incumbents and showing that network operations, agility, and manageability must change. Let’s take a look at this history in a little more detail.
+## Расцвет программно-определяемых сетей
 
-### The Advent of OpenFlow
+Если бы одному человеку можно было приписать все изменения, происходящие в сетевой индустрии индустрии, то это Мартин Касадо, генеральный партнер венчурной компании Andreessen Horowitz. Ранее Касадо был научным сотрудником VMware, старшим вице-президентом и генеральным менеджером в подразделении сетевых технологий и безопасности компании VMware. Он оказал глубокое влияние на отрасль не только благодаря своему непосредственному вкладу (в том числе OpenFlow и Nicira), но и тем, что открыл глаза крупным сетевым компаниям и показал, что сетевые операции, гибкость и управляемость должны измениться. Давайте рассмотрим эту историю немного подробнее.
 
-For better or worse, OpenFlow served as the first major protocol of the SDN movement. Casado worked on OpenFlow while earning his PhD at Stanford University, 1under the supervision of Nick McKeown. The OpenFlow protocol allows for the decoupling of a network device’s control plane from the data plane (see Figure 1-1). In simplest terms, the control plane can be thought of as the brains of a network device, and the data plane can be thought of as the hardware or application-specific integrated circuits (ASICs) that perform packet forwarding.
+### Появление OpenFlow
+
+К лучшему или к худшему, но OpenFlow стал первым основным протоколом движения SDN. Касадо работал над OpenFlow во время получения степени доктора философии в Стэнфордском университете под руководством Ника МакКеоуна. Протокол OpenFlow позволяет отделить плоскость управления сетевого устройства от плоскости данных (см. Рисунок 1-1). Проще говоря, плоскость управления можно представить как «мозг» сетевого устройства, а плоскость данных - как аппаратное обеспечение или специфические для приложения интегральные схемы (ASIC), которые выполняют пересылку пакетов.
 ![pic1-1](pics/pic1-1.png)
-Figure 1-1. Decoupling the control plane and data plane with OpenFlow
+*Рисунок 1-1. Разделение плоскости управления и плоскости данных с помощью OpenFlow*
 
-    Figure 1-1 depicts the network devices having no control plane. This represents a pure OpenFlow-only deployment. Many devices also support running OpenFlow in a hybrid mode, meaning OpenFlow can be deployed on a given port, virtual local area network (VLAN), or even within a normal packet-forwarding pipeline. Then, there is no match in the OpenFlow table, the existing forwarding tables—media access control (MAC) routing, etc.—are used, making packet forwarding more analogous to policy-based routing (PBR).
+    На рисунке 1-1 показаны сетевые устройства без плоскости управления. Это представляет собой развертывание только OpenFlow. Многие устройства также поддерживают работу OpenFlow в гибридном режиме, то есть OpenFlow может быть развернут на определенном порту, в виртуальной локальной сети (VLAN) или даже в рамках обычного конвейера пересылки пакетов. В этом случае, если в таблице OpenFlow нет соответствия, используются существующие таблицы пересылки - маршрутизация управления доступом к среде (MAC) и т.д., что делает пересылку пакетов более похожей на маршрутизацию на основе политик (PBR).
     
-This means OpenFlow is a low-level protocol used to directly interface with the
-hardware tables (e.g., forwarding information base, or FIB) that instruct a network device on how to forward traffic (for example, “traffic to destination 192.168.0.100 should egress port 48”).
+Это означает, что OpenFlow - это низкоуровневый протокол, используемый для прямого взаимодействия с аппаратными таблицами (например, информационной базой пересылки, или FIB), которые указывают сетевому устройству, как пересылать трафик (например, «трафик к пункту назначения 192.168.0.100 должен выходить через порт 48»).
 
-    OpenFlow is a low-level protocol that manipulates flow tables, thus directly impacting packet forwarding. OpenFlow is not intended to interact with management plane attributes like authentication or Simple Network Management Protocol (SNMP) parameters.
+    OpenFlow - это низкоуровневый протокол, манипулирующий таблицами потоков, тем самым непосредственно влияя на пересылку пакетов. OpenFlow не предназначен для взаимодействия с атрибутами плоскости управления, такими как аутентификация или параметры Simple Network Management Protocol (SNMP).
 
-Because the tables OpenFlow uses support more than the destination address as compared to traditional routing protocols, OpenFlow offers more granularity (matching fields in the packet) to determine the forwarding path. This is not unlike the granularity offered by PBR to decide the next routing hop by taking into account the source address. As OpenFlow would do many years later, PBR allows network administrators to forward traffic based on “nontraditional” attributes, like a packet’s source address. However, it took quite some time for network vendors to offer equivalent performance for traffic that was forwarded via PBR, and the final result was still very vendor specific.
+Поскольку таблицы, используемые OpenFlow, поддерживают не только адрес назначения, по сравнению с традиционными протоколами маршрутизации, OpenFlow предлагает большую детализацию (соответствие полей в пакете) для определения пути пересылки. Это не похоже на гранулярность, предлагаемую PBR для принятия решения о следующем переходе маршрутизации с учетом адреса источника. Как и OpenFlow много лет спустя, PBR позволяет сетевым администраторам направлять трафик на основе «нетрадиционных» атрибутов, таких как адрес источника пакета. Однако прошло немало времени, прежде чем сетевые производители смогли предложить эквивалентную производительность для трафика, пересылаемого с помощью PBR, и конечный результат все еще зависел от конкретного производителя.
 
-The advent of OpenFlow meant that we could achieve the same granularity with
-traffic-forwarding decisions but in a vendor-neutral way. It became possible to
-enhance the capabilities of the network infrastructure without waiting for the next version of hardware from the manufacturer.
+Появление OpenFlow означало, что мы можем достичь той же детализации при решений о переадресации трафика, но при этом не зависящих от производителя. Стало возможным расширять возможности сетевой инфраструктуры, не дожидаясь следующей версии оборудования от производителя.
 
 ---
-##### History of Programmable Networks
-OpenFlow was not the first protocol or technology used to decouple control func‐
-tions and intelligence from network devices. A long history of technology and
-research predates OpenFlow, although OpenFlow is the technology that started the
-SDN revolution. A few of the earlier technologies include Forwarding and Control
-Element Separation (ForCES), active networks, routing control platform (RCP), and path computation element (PCE). For a more in-depth look at this history, take a look at the paper “The Road to SDN: An Intellectual History of Programmable Networks” by Nick Feamster et al.
+##### История программируемых сетей
+
+OpenFlow не был первым протоколом или технологией, используемой для отделения функций управления и интеллекта от сетевых устройств. Длинная история технологий и исследований предшествовала OpenFlow, хотя именно OpenFlow положила начало революции SDN. К числу более ранних технологий относятся переадресация и разделение управляющих элементов (Forwarding and Control разделение элементов (ForCES), активные сети, платформа управления маршрутизацией (RCP) и элемент вычисления пути (PCE). Для более подробного ознакомления с этой историей посмотрите статью «[Путь к SDN: Интеллектуальная история программируемых сетей](https://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/sdnhistory.pdf)» Ника Фемстера и др.
 
 ---
 
 
-### Why OpenFlow?
-While it’s important to understand what OpenFlow is, it’s even more important to
-understand the reasoning behind the research and development effort of the original OpenFlow spec that led to the rise of SDN.
+### Почему именно OpenFlow?
 
-Casado had a job working for the United States government while he was attending
-Stanford. At that time, the government needed to react to security attacks on its IT systems (after all, this is the US government). Casado quickly realized that he was able to program and manipulate the computers and servers as needed. The actual use cases were never publicized, but it was this type of control over endpoints that made it possible to react, analyze, and potentially reprogram a host or group of hosts when and if needed.
+Важно понять, что такое OpenFlow, но еще важнее понять
+понять причины, побудившие исследователей и разработчиков оригинальной спецификации OpenFlow, которая привела к появлению SDN.
 
-When it came to the network, it was nearly impossible to do this cleanly and programmatically. After all, each network device was closed (locked from installing third-party software, for example) and had only a command-line interface (CLI). Although the CLI was and is still well known and even preferred by network administrators, it was clear to Casado that it did not offer the flexibility required to truly manage, operate, and secure a network.
+Касадо работал на правительство Соединенных Штатов, пока учился в
+Стэнфорде. В то время правительству необходимо было реагировать на атаки безопасности на свои ИТ-системы (в конце концов, это же правительство США). Касадо быстро понял, что может программировать и манипулировать компьютерами и серверами так, как это необходимо. Реальные примеры использования не разглашались, но именно такой контроль над конечными точками позволял реагировать, анализировать и потенциально перепрограммировать хост или группу хостов, когда и если это было необходимо.
 
-In reality, the way networks were managed had never changed in more than 20 years except for the addition of CLI commands for new features. The biggest change was the migration from the Telnet to the Secure Shell (SSH) protocol, which was a joke often used by the SDN company Big Switch Networks in its slides, as you can see in Figure 1-2.
+Когда дело доходило до сети, сделать это чисто программно было практически невозможно. Ведь каждое сетевое устройство было закрыто (например, заблокировано от установки стороннего программного обеспечения) и имело только интерфейс командной строки (CLI). Хотя CLI был и остается хорошо известным и даже предпочтительным для сетевых администраторов, Касадо было ясно, что он не обеспечивает гибкости, необходимой для настоящего управления, эксплуатации и обеспечения безопасности сети.
+
+В действительности способ управления сетями не менялся более 20 лет, за исключением добавления команд CLI для новых функций. Самым большим изменением стал переход с протокола Telnet на Secure Shell (SSH), который, как шутка, часто использовала SDN-компания Big Switch Networks в своих слайдах, как показано на рисунке 1-2.
 ![pic1-2](pics/pic1-2.png)
-Figure 1-2. What’s changed? From Telnet to SSH (image source: Big Switch Networks, acquired by Arista Networks)
+Рисунок 1-2. Что изменилось? От Telnet к SSH (источник изображения: Big Switch Networks, приобретенная компанией Arista Networks)
 
-All joking aside, the management of networks has lagged behind other technologies quite drastically, and this is what Casado eventually set out to change over the next several years. This lack of manageability is often better understood when other technologies are examined. Other technologies almost always have more modern ways of managing many devices for both configuration management and data gathering and analysis—for example, hypervisor managers, wireless controllers, IP PBXs (i.e., private IP telephony exchange), PowerShell, DevOps tools, and the list goes on. Some of these are tightly coupled to vendors as commercial software, but others are more loosely aligned to allow for multiplatform management, operations, and agility.
+Шутки в сторону, но управление сетями сильно отставало от других технологий, и именно это Касадо в конечном итоге собирался изменить в течение следующих нескольких лет. Недостаточная управляемость часто становится понятнее, когда рассматриваются другие технологии. Другие технологии почти всегда имеют более современные способы управления множеством устройств как для управления конфигурацией, так и для сбора и анализа данных - например, менеджеры гипервизоров, контроллеры беспроводных сетей, IP PBX (т.е. частные станции IP-телефонии), PowerShell, инструменты DevOps и т.д. Список можно продолжать. Некоторые из них жестко привязаны к поставщикам в качестве коммерческого программного обеспечения, а другие - более свободны, чтобы обеспечить многоплатформенное управление, эксплуатацию и гибкость.
 
-If we go back to the scenario Casado encountered while working for the government, what sort of questions came up when looking for answers? Was it possible to redirect traffic based on the application? Did network devices have an application programming interface (API)? Was there a single point of communication to the network?
-The answers were largely no across the board. How could it be possible to program the network to dynamically control packet forwarding, policy, and configuration as easily as it was to write a program and have it on an end host machine?
-The initial OpenFlow spec was the result of Casado experiencing these types of problems firsthand. While the hype around OpenFlow has died down since the industry started to finally focus more on use cases and solutions than low-level protocols, this initial work was the catalyst for the entire industry to rethink the way networks are built, managed, and operated. Thank you, Martin.
-This also means if it weren’t for Casado, this book may never have been written!
+Если вернуться к сценарию, с которым Касадо столкнулся, работая в правительстве, то какие вопросы возникали при поиске ответов? Можно ли перенаправлять трафик в зависимости от приложения? Есть ли у сетевых устройств интерфейс прикладного программирования (API)? Была ли единая точка связи с сетью? Ответы были в основном отрицательными. Как можно было запрограммировать сеть на динамическое управление пересылкой пакетов, политикой и конфигурацией так же легко, как написать программу и установить ее на конечный хост?
 
-### What Is Software-Defined Networking?
+Первоначальная спецификация OpenFlow стала результатом того, что Касадо столкнулся с подобными проблемами на собственном опыте. Хотя шумиха вокруг OpenFlow утихла после того, как отрасль наконец-то начала уделять больше внимания сценариям использования и решениям, а не низкоуровневым протоколам, эта первоначальная работа стала катализатором для всей отрасли, заставившим ее переосмыслить способ построения, управления и эксплуатации сетей. Спасибо, Мартин.
+
+Это также означает, что если бы не Касадо, эта книга, возможно, никогда не была бы написана!
+
+## What Is Software-Defined Networking?
 
 We’ve introduced OpenFlow, but what is software-defined networking? Are they the
 same thing, different things, or neither? To be honest, SDN is just like the cloud was more than a decade ago, before we knew about different types of cloud, such as infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS).
@@ -385,7 +375,7 @@ Managing these container and cloud environments may seem intimidating in the
 beginning. Take it easy. It is still networking, so your network engineer skills are valid
 and needed. Certainly, it requires specific domain knowledge and other skills such as programming languages, domain-specific languages, and tools. This book will help you get started with all of them.
 
-### Резюме
+## Резюме
 Вот и все: введение в тенденции и технологии, которые чаще всего относят к SDN, прокладывающие путь к улучшению работы сети за счет ее программируемости и автоматизации. За последние семь лет были созданы десятки SDN-стартапов, вложены миллионы венчурного капитала, а миллиарды потрачены на приобретение этих компаний. Эволюция была нереальной, и если мы разделим ее еще на один шаг, то увидим общую цель - использовать принципы и технологии программного обеспечения для предоставления пользователям большей власти, контроля, гибкости и выбора при одновременном повышении эффективности работы.
 
 В Главе 2 мы рассмотрим автоматизацию сети и углубимся в ее различные виды. Вы узнаете о некоторых общих протоколах и API, а также о том, как автоматизация начала развиваться в последние несколько лет.

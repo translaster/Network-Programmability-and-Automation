@@ -1,14 +1,31 @@
-[Chapter 1, “Network Industry Trends”](chapter-01.md)
-[Chapter 2, “Network Automation”](chapter-02.md)
-[Chapter 3, “Linux”](chapter-03.md)
-[Chapter 4, “Cloud”](chapter-04.md)
-[Chapter 5, “Network Developer Environments”](chapter-05.md)
-[Chapter 6, “Python”](chapter-06.md)
-[Chapter 7, “Go”](chapter-07.md)
-[Chapter 8, “Data Formats and Models”](chapter-08.md)
-[Chapter 9, “Templates”](chapter-09.md)
-[Chapter 10, “Working with Network APIs”](chapter-10.md)
-[Chapter 11, “Source Control with Git”](chapter-11.md)
-[Chapter 12, “Automation Tools”](chapter-12.md)
-[Chapter 13, “Continuous Integration”](chapter-13.md)
-[Chapter 14, “Network Automation Architecture”](chapter-14.md)
+# Содержание
+
+[Предисловие](preface.md)
+
+[Глава 1, “Network Industry Trends”](chapter-01.md)
+
+[Глава 2, “Network Automation”](chapter-02.md)
+
+[Глава 3, “Linux”](chapter-03.md)
+
+[Глава 4, “Cloud”](chapter-04.md)
+
+[Глава 5, “Network Developer Environments”](chapter-05.md)
+
+[Глава 6, “Python”](chapter-06.md)
+
+[Глава 7, “Go”](chapter-07.md)
+
+[Глава 8, “Data Formats and Models”](chapter-08.md)
+
+[Глава 9, “Templates”](chapter-09.md)
+
+[Глава 10, “Working with Network APIs”](chapter-10.md)
+
+[Глава 11, “Source Control with Git”](chapter-11.md)
+
+[Глава 12, “Automation Tools”](chapter-12.md)
+
+[Глава 13, “Continuous Integration”](chapter-13.md)
+
+[Глава 14, “Network Automation Architecture”](chapter-14.md)
