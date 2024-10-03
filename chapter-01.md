@@ -384,6 +384,8 @@ CloudFormation and Google Cloud Deployment Manager).
 Managing these container and cloud environments may seem intimidating in the
 beginning. Take it easy. It is still networking, so your network engineer skills are valid
 and needed. Certainly, it requires specific domain knowledge and other skills such as programming languages, domain-specific languages, and tools. This book will help you get started with all of them.
-### Summary
-There you have it: an introduction to the trends and technologies that are most often categorized as SDN, paving the path into better network operations through network programmability and automation. Dozens of SDN startups have been created over the past seven years, millions in venture capital money invested, and billions spent on acquisitions of these companies. The evolution has been unreal, and if we break it down one step further, we can see the common goal of leveraging software principles and technology to offer greater power, control, agility, and choice to the users while increasing operational efficiencies.
-In Chapter 2, we take a look at network automation and dive deeper into its various types. You’ll learn about some common protocols and APIs, and how automation has started to evolve in the last several years.
+
+### Резюме
+Вот и все: введение в тенденции и технологии, которые чаще всего относят к SDN, прокладывающие путь к улучшению работы сети за счет ее программируемости и автоматизации. За последние семь лет были созданы десятки SDN-стартапов, вложены миллионы венчурного капитала, а миллиарды потрачены на приобретение этих компаний. Эволюция была нереальной, и если мы разделим ее еще на один шаг, то увидим общую цель - использовать принципы и технологии программного обеспечения для предоставления пользователям большей власти, контроля, гибкости и выбора при одновременном повышении эффективности работы.
+
+В Главе 2 мы рассмотрим автоматизацию сети и углубимся в ее различные виды. Вы узнаете о некоторых общих протоколах и API, а также о том, как автоматизация начала развиваться в последние несколько лет.
