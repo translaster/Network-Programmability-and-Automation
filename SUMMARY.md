@@ -2,30 +2,30 @@
 
 [Предисловие](preface.md)
 
-[Глава 1, “Network Industry Trends”](chapter-01.md)
+[Глава 1 "Тенденции сетевой индустрии”](chapter-01.md)
 
-[Глава 2, “Network Automation”](chapter-02.md)
+[Глава 2 “Автоматизация сети”](chapter-02.md)
 
-[Глава 3, “Linux”](chapter-03.md)
+[Глава 3 “Linux”](chapter-03.md)
 
-[Глава 4, “Cloud”](chapter-04.md)
+[Глава 4 “Облако”](chapter-04.md)
 
-[Глава 5, “Network Developer Environments”](chapter-05.md)
+[Глава 5 “Среды сетевых разработчиков”](chapter-05.md)
 
-[Глава 6, “Python”](chapter-06.md)
+[Глава 6 “Python”](chapter-06.md)
 
-[Глава 7, “Go”](chapter-07.md)
+[Глава 7 “Go”](chapter-07.md)
 
-[Глава 8, “Data Formats and Models”](chapter-08.md)
+[Глава 8 “Форматы и модели данных”](chapter-08.md)
 
-[Глава 9, “Templates”](chapter-09.md)
+[Глава 9 “Шаблоны”](chapter-09.md)
 
-[Глава 10, “Working with Network APIs”](chapter-10.md)
+[Глава 10 “Работа с сетевыми API”](chapter-10.md)
 
-[Глава 11, “Source Control with Git”](chapter-11.md)
+[Глава 11 “Контроль исходных текстов в помощью Git”](chapter-11.md)
 
-[Глава 12, “Automation Tools”](chapter-12.md)
+[Глава 12 “Средства автоматизации”](chapter-12.md)
 
-[Глава 13, “Continuous Integration”](chapter-13.md)
+[Глава 13 “Непрерывная интеграция”](chapter-13.md)
 
-[Глава 14, “Network Automation Architecture”](chapter-14.md)
+[Глава 14 “Архитектура сетевой автоматизации”](chapter-14.md)
